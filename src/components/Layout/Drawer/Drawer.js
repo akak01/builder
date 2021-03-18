@@ -5,8 +5,10 @@ import Nav from "../../Nav/Nav";
 const Drawer = () => {
     return (
         <div className={classes.Drawer}>
-            <Logo/>
-            <Nav/>
+            <div className={[classes.content, classes.closed].join(" ")}>
+              <Logo/>
+              <Nav/>  
+            </div>
         </div>
     );
 }
