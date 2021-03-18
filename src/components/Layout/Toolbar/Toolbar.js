@@ -8,7 +8,7 @@ const Toolbar = ({ setDrawerOpen }) => {
         <div className={classes.Toolbar}>
             <Logo/>
             <Nav/>
-            <DrawerToggle setDrawerOpen={setDrawerOpen/>
+            <DrawerToggle setDrawerOpen={setDrawerOpen}/>
         </div>
     );
 }
