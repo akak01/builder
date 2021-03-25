@@ -5,7 +5,7 @@ const Preview = ({ ingredients }) => {
   const result = [];
   for (const ingredient in ingredients) {
     for (let i = 0; i < ingredients[ingredient]; i++) {
-      result.push(<Ingredient type={ingredient} />)
+      result.push(<Ingredient  type={ingredient} />)
     }
   }
 
