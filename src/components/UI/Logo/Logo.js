@@ -1,5 +1,5 @@
 import classes from "./Logo.module.css";
-import logo from "../../images/logo.jpg";
+import logo from "../../../images/logo.jpg";
 
 const Logo = () => {
   return (
