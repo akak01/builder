@@ -1,7 +1,7 @@
-import Ingredient from "../Ingredient/Ingredient";
-import classes from "./Preview.module.css";
+import MacaronBoxIngredient from "../MacaronBoxIngredient/MacaronBoxIngredient";
+import classes from "./MacaronBoxPreview.module.css";
 
-const Preview = ({ ingredients }) => {
+const MacaronBoxPreview = ({ ingredients }) => {
   const result = [];
   for (const ingredient in ingredients) {
     for (let i = 0; i < ingredients[ingredient]; i++) {
@@ -10,7 +10,7 @@ const Preview = ({ ingredients }) => {
   }
 
   return (
-    <div className={classes.Preview}>
+    <div className={classes.MacaronBoxPreview}>
       <div className={classes.sauce}>
         {result}
       </div>
@@ -18,4 +18,4 @@ const Preview = ({ ingredients }) => {
   );
 }
 
-export default Preview;
+export default MacaronBoxPreview;
