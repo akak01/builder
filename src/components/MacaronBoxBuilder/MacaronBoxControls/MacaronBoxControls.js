@@ -1,9 +1,23 @@
-import classes from "./MacaronBoxControls.module.css";
+import PizzaControl from "./PizzaControl/PizzaControl";
+import classes from "./PizzaControls.module.css";
 
-const MacaronBoxControls = () => {
+const PizzaControls = ({ ingredients, addIngredient, removeIngredient, canBuy }) => {
+  const results = [];
+  for (const ingredient in ingredients) {
+    results.push(<PizzaControl
+        key={ingredient}
+        add={addIngredient}
+        remove={removeIngredient}
+        type={ingredient} />)
+  }
+
   return (
-    <div className={classes.MacaronBoxControls}>MacaronBoxControls</div>
+    <div className={classes.PizzaControls}>
+      <strong>Ingredients</strong>
+      {results}
+      <button disabled={!canBuy}>Order</button>
+    </div>
   );
 }
 
-export default MacaronBoxControls;
+export default PizzaControls;

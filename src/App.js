@@ -1,12 +1,13 @@
-import classes from "./App.css";
 import Layout from "./components/Layout/Layout";
+import PizzaBuilder from "./components/PizzaBuilder/PizzaBuilder";
 
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className={classes.App}>
+    <div className="App">
       <Layout>
-        Pizza Bulider by master Syrgakova Akak
+        <PizzaBuilder />
       </Layout>
     </div>
   );
