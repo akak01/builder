@@ -1,19 +1,19 @@
-import PizzaIngredient from "../PizzaIngredient/PizzaIngredient";
+import MacaroonBoxIngredient from "../MacaroonBoxIngredient/MacaroonBoxIngredient";
 
-import classes from "./PizzaPreview.module.css";
+import classes from "./MacaroonBoxPreview.module.css";
 import ingredientsBackground from "../../../images/cheese.svg";
 
-const PizzaPreview = ({ ingredients, price }) => {
+const MacaroonBoxPreview = ({ ingredients, price }) => {
   const result = [];
   for (const ingredient in ingredients) {
     for (let i = 0; i < ingredients[ingredient]; i++) {
-      result.push(<PizzaIngredient key={ingredient + i} type={ingredient} />)
+      result.push(<MacaroonBoxIngredient key={ingredient + i} type={ingredient} />)
     }
   }
 
   return (
-    <div className={classes.PizzaPreview}>
-      <div className={classes.pizza}>
+    <div className={classes.MacaroonBoxPreview}>
+      <div className={classes.macaroon}>
         <div
           className={classes.ingredients}
           style={{ backgroundImage: `url(${ingredientsBackground})` }}>
@@ -25,4 +25,4 @@ const PizzaPreview = ({ ingredients, price }) => {
   );
 }
 
-export default PizzaPreview;
+export default MacaroonBoxPreview;

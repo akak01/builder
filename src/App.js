@@ -1,5 +1,5 @@
 import Layout from "./components/Layout/Layout";
-import PizzaBuilder from "./components/PizzaBuilder/PizzaBuilder";
+import MacaroonBoxBuilder from "./components/MacaroonBoxBuilder/MacaroonBoxBuilder";
 
 import "./App.css";
 
@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">
       <Layout>
-        <PizzaBuilder />
+        <MacaroonBoxBuilder />
       </Layout>
     </div>
   );

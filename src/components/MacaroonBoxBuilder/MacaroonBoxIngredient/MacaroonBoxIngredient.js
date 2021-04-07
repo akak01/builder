@@ -1,7 +1,6 @@
-  
 import React from "react";
 
-import classes from "./PizzaIngredient.module.css";
+import classes from "./MacaronBoxIngredient.module.css";
 import salamiBackground from "../../../images/salami.svg";
 import tomatoBackground from "../../../images/tomato.svg";
 import blackOliveBackground from "../../../images/blackOlive.svg";
@@ -9,7 +8,7 @@ import greenOliveBackground from "../../../images/greenOlive.svg";
 import redPepperBackground from "../../../images/redPepper.svg";
 import yellowPepperBackground from "../../../images/yellowPepper.svg";
 
-const PizzaIngredient = ({ type, fixed }) => {
+const MacaroonBoxIngredient = ({ type, fixed }) => {
   const types = {
     salami: { backgroundImage: `url(${salamiBackground})`, width: "35px", height: "35px" },
     tomato: { backgroundImage: `url(${tomatoBackground})`, width: "35px", height: "35px" },
@@ -20,18 +19,18 @@ const PizzaIngredient = ({ type, fixed }) => {
   };
 
   function getPosition(ingredientWidth) {
-    const pizzaDiameter = 380;
-    const pizzaRadius = pizzaDiameter / 2;
+    const macaroonDiameter = 380;
+    const macaroonRadius = macaroonDiameter / 2;
     const ingredientRadius = parseInt(ingredientWidth) / 2;
 
-    const ingredientTop = Math.round(Math.random() * pizzaDiameter);
-    const ingredientLeft = Math.round(Math.random() * pizzaDiameter);
+    const ingredientTop = Math.round(Math.random() * macaronDiameter);
+    const ingredientLeft = Math.round(Math.random() * macaronDiameter);
 
     const distance = Math.sqrt(
-      Math.pow(ingredientTop - pizzaRadius, 2) + Math.pow(ingredientLeft - pizzaRadius, 2)
+      Math.pow(ingredientTop - macaroonRadius, 2) + Math.pow(ingredientLeft - macaroonRadius, 2)
     ) + ingredientRadius;
 
-    return distance < pizzaRadius
+    return distance < macaroonRadius
       ? {
         top: ingredientTop - ingredientRadius,
         left: ingredientLeft - ingredientRadius
@@ -49,8 +48,8 @@ const PizzaIngredient = ({ type, fixed }) => {
   types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
 
   return (
-    <div className={classes.PizzaIngredient} style={types[type]}></div>
+    <div className={classes.MacaroonBoxIngredient} style={types[type]}></div>
   );
 }
 
-export default React.memo(PizzaIngredient);
+export default React.memo(MacaroonBoxIngredient);

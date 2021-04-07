@@ -1,10 +1,10 @@
-import PizzaPreview from "./PizzaPreview/PizzaPreview";
-import PizzaControls from "./PizzaControls/PizzaControls";
+import MacaroonBoxPreview from "./MacaroonBoxPreview/MacaroonBoxPreview";
+import MacaroonBoxControls from "./MacaroonBoxControls/MacaroonBoxControls";
 
-import classes from "./PizzaBuilder.module.css";
+import classes from "./MacaroonBoxBuilder.module.css";
 import { useState } from "react";
 
-const PizzaBuilder = () => {
+const MacaroonBoxBuilder = () => {
   const prices = {
     tomato: 3.5,
     salami: 4,
@@ -50,11 +50,11 @@ const PizzaBuilder = () => {
   }
 
   return (
-    <div className={classes.PizzaBuilder}>
-      <PizzaPreview
+    <div className={classes.MacaroonBuilder}>
+      <MacaroonBoxPreview
         ingredients={ingredients}
         price={price} />
-      <PizzaControls
+      <MacaroonBoxControls
         canBuy={canBuy}
         ingredients={ingredients}
         addIngredient={addIngredient}
@@ -64,4 +64,4 @@ const PizzaBuilder = () => {
   );
 }
 
-export default PizzaBuilder;
+export default MacaroonBoxBuilder;
