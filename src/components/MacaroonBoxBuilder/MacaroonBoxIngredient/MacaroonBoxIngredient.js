@@ -1,21 +1,29 @@
 import React from "react";
 
 import classes from "./MacaronBoxIngredient.module.css";
-import salamiBackground from "../../../images/salami.svg";
-import tomatoBackground from "../../../images/tomato.svg";
-import blackOliveBackground from "../../../images/blackOlive.svg";
-import greenOliveBackground from "../../../images/greenOlive.svg";
-import redPepperBackground from "../../../images/redPepper.svg";
-import yellowPepperBackground from "../../../images/yellowPepper.svg";
+import blueMacaroon from "../../../images/blueMacaroon.webp";
+import chocolateMacaroon from "../../../images/chocolateMacaroon.png";
+import creamMacaroon from "../../../images/creamMacaroon.png";
+import greenMacaroon from "../../../images/greenMacaroon.png";
+import lemonMacaroon from "../../../images/lemonMacaroon.png";
+import limeMacaroon from "../../../images/limeMacaroon.png";
+import mintMacaroon from "../../../images/mintMacaroon.webp";
+import redMacaroon from "../../../images/redMacaroon.png";
+import violetMacaroon from "../../../images/violetMacaroon.png";
+import yellowMacaroon from "../../../images/yellowMacaroon.webp";
 
 const MacaroonBoxIngredient = ({ type, fixed }) => {
   const types = {
-    salami: { backgroundImage: `url(${salamiBackground})`, width: "35px", height: "35px" },
-    tomato: { backgroundImage: `url(${tomatoBackground})`, width: "35px", height: "35px" },
-    blackOlive: { backgroundImage: `url(${blackOliveBackground})`, width: "10px", height: "10px" },
-    greenOlive: { backgroundImage: `url(${greenOliveBackground})`, width: "10px", height: "10px" },
-    redPepper: { backgroundImage: `url(${redPepperBackground})`, width: "20px", height: "20px" },
-    yellowPepper: { backgroundImage: `url(${yellowPepperBackground})`, width: "40px", height: "40px" },
+    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`, width: "35px", height: "35px" },
+    chocolateMacaroon: { backgroundImage: `url(${chocolateMacaroonBackground})`, width: "35px", height: "35px" },
+    creamMacaroon: { backgroundImage: `url(${creamMacaroonBackground})`, width: "10px", height: "10px" },
+    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`, width: "10px", height: "10px" },
+    lemonMacaroon: { backgroundImage: `url(${lemonMacaroonBackground})`, width: "20px", height: "20px" },
+    limeMacaroon: { backgroundImage: `url(${limeMacaroonBackground})`, width: "40px", height: "40px" },
+    mintMacaroon: { backgroundImage: `url(${mintMacaroonBackground})`, width: "40px", height: "40px" },
+    redMacaroon: { backgroundImage: `url(${redMacaroonBackground})`, width: "40px", height: "40px" },
+    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "40px", height: "40px" },
+    yellowMacaroon: { backgroundImage: `url(${yellowMacaroonBackground})`, width: "40px", height: "40px" },
   };
 
   function getPosition(ingredientWidth) {
@@ -23,8 +31,8 @@ const MacaroonBoxIngredient = ({ type, fixed }) => {
     const macaroonRadius = macaroonDiameter / 2;
     const ingredientRadius = parseInt(ingredientWidth) / 2;
 
-    const ingredientTop = Math.round(Math.random() * macaronDiameter);
-    const ingredientLeft = Math.round(Math.random() * macaronDiameter);
+    const ingredientTop = Math.round(Math.random() * macaroonDiameter);
+    const ingredientLeft = Math.round(Math.random() * macaroonDiameter);
 
     const distance = Math.sqrt(
       Math.pow(ingredientTop - macaroonRadius, 2) + Math.pow(ingredientLeft - macaroonRadius, 2)

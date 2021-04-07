@@ -6,21 +6,29 @@ import { useState } from "react";
 
 const MacaroonBoxBuilder = () => {
   const prices = {
-    tomato: 3.5,
-    salami: 4,
-    greenOlive: .3,
-    blackOlive: .3,
-    redPepper: 2,
-    yellowPepper: 1,
+    blueMacaroon: 3.5,
+    chocolateMacaroon: 4,
+    creamMacaroon: .3,
+    greenMacaroon: .3,
+    lemonMacaroon: 2,
+    limeMacaroon: 1,
+    mintMacaroon: 1,
+    redMacaroon: 1,
+    violetMacaroon: 1,
+    yellowMacaroon: 1,
   };
 
   const [ingredients, setIngredients] = useState({
-    tomato: 1,
-    salami: 1,
-    greenOlive: 1,
-    blackOlive: 1,
-    redPepper: 1,
-    yellowPepper: 1,
+    blueMacaroon: 1,
+    chocolateMacaroon: 1,
+    creamMacaroon: 1,
+    greenMacaroon: 1,
+    lemonMacaroon: 1,
+    limeMacaroon: 1,
+    mintMacaroon: 1,
+    redMacaroon: 1,
+    violetMacaroon: 1,
+    yellowMacaroon: 1,
   });
   const [price, setPrice] = useState(150);
   const [canBuy, setCanBuy] = useState(true);
