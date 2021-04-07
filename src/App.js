@@ -1,5 +1,5 @@
 import Layout from "./components/Layout/Layout";
-import MacaroonBoxBuilder from "./components/MacaroonBoxBuilder/MacaroonBoxBuilder";
+import MacaroonBoxBuilder from "./components/MacaroonBoxBuilder/MacaroonBoxBuilder.js";
 
 import "./App.css";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from "./MacaronBoxIngredient.module.css";
+import classes from "./MacaroonBoxIngredient.module.css";
 import blueMacaroon from "../../../images/blueMacaroon.webp";
 import chocolateMacaroon from "../../../images/chocolateMacaroon.png";
 import creamMacaroon from "../../../images/creamMacaroon.png";
