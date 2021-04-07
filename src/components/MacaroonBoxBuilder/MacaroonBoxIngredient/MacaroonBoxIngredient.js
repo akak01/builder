@@ -1,16 +1,16 @@
 import React from "react";
 
 import classes from "./MacaroonBoxIngredient.module.css";
-import blueMacaroon from "../../../images/blueMacaroon.webp";
-import chocolateMacaroon from "../../../images/chocolateMacaroon.png";
-import creamMacaroon from "../../../images/creamMacaroon.png";
-import greenMacaroon from "../../../images/greenMacaroon.png";
-import lemonMacaroon from "../../../images/lemonMacaroon.png";
-import limeMacaroon from "../../../images/limeMacaroon.png";
-import mintMacaroon from "../../../images/mintMacaroon.webp";
-import redMacaroon from "../../../images/redMacaroon.png";
-import violetMacaroon from "../../../images/violetMacaroon.png";
-import yellowMacaroon from "../../../images/yellowMacaroon.webp";
+import blueMacaroonBackground from "../../../images/blueMacaroon.webp";
+import chocolateMacaroonBackground from "../../../images/chocolateMacaroon.png";
+import creamMacaroonBackground from "../../../images/creamMacaroon.png";
+import greenMacaroonBackground from "../../../images/greenMacaroon.png";
+import lemonMacaroonBackground from "../../../images/lemonMacaroon.png";
+import limeMacaroonBackground from "../../../images/limeMacaroon.png";
+import mintMacaroonBackground from "../../../images/mintMacaroon.webp";
+import redMacaroonBackground from "../../../images/redMacaroon.png";
+import violetMacaroonBackground from "../../../images/violetMacaroon.png";
+import yellowMacaroonBackground from "../../../images/yellowMacaroon.webp";
 
 const MacaroonBoxIngredient = ({ type, fixed }) => {
   const types = {
