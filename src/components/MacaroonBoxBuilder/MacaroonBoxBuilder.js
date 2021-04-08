@@ -2,47 +2,37 @@ import MacaroonBoxPreview from "./MacaroonBoxPreview/MacaroonBoxPreview";
 import MacaroonBoxControls from "./MacaroonBoxControls/MacaroonBoxControls";
 
 import classes from "./MacaroonBoxBuilder.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Modal from "../UI/Modal/Modal";
 
 const MacaroonBoxBuilder = () => {
   const prices = {
-    blueMacaroon: 3.5,
-    chocolateMacaroon: 4,
-    creamMacaroon: .3,
-    greenMacaroon: .3,
-    lemonMacaroon: 2,
-    limeMacaroon: 1,
-    mintMacaroon: 1,
-    redMacaroon: 1,
-    violetMacaroon: 1,
-    yellowMacaroon: 1,
+    blueMacaroon: 35,
+    creamMacaroon: 20,
+    lemonMacaroon: 36,
+    limeMacaroon: 27,
+    mintMacaroon: 42,
+    redMacaroon: 38,
+    violetMacaroon: 29,
+    yellowMacaroon: 34,
   };
 
-  const [ingredients, setIngredients] = useState({
-    blueMacaroon: 1,
-    chocolateMacaroon: 1,
-    creamMacaroon: 1,
-    greenMacaroon: 1,
-    lemonMacaroon: 1,
-    limeMacaroon: 1,
-    mintMacaroon: 1,
-    redMacaroon: 1,
-    violetMacaroon: 1,
-    yellowMacaroon: 1,
-  });
-  const [price, setPrice] = useState(150);
-  const [canBuy, setCanBuy] = useState(true);
+  const [ingredients, setIngredients] = useState({});
+  const [price, setPrice] = useState(0);
+  const [ordering, setOrdering] = useState(false);
 
-  function checkCanBuy(newIngredients) {
-    const totalIngredients = Object.values(newIngredients)
-      .reduce((total, current) => total + current);
-    setCanBuy(totalIngredients > 0);
-  }
+  useEffect(() => {
+    axios.get('https://builder-883f2-default-rtdb.firebaseio.com/default.json')
+    .then(response => {
+      setIngredients(response.data.ingredients);
+      setPrice(response.data.price);
+    });
+  }, []);
 
   function addIngredient(type) {
     const newIngredients = { ...ingredients };
     newIngredients[type]++;
-    checkCanBuy(newIngredients);
     setPrice(price + prices[type]);
     setIngredients(newIngredients);
   }
@@ -51,10 +41,17 @@ const MacaroonBoxBuilder = () => {
     if (ingredients[type]) {
       const newIngredients = { ...ingredients };
       newIngredients[type]--;
-      checkCanBuy(newIngredients);
       setPrice(price - prices[type]);
       setIngredients(newIngredients);
     }
+  }
+  
+  function startOrdering() {
+    setOrdering(true);
+  }
+
+  function stopOrdering() {
+    setOrdering(false);
   }
 
   return (
@@ -63,11 +60,14 @@ const MacaroonBoxBuilder = () => {
         ingredients={ingredients}
         price={price} />
       <MacaroonBoxControls
-        canBuy={canBuy}
         ingredients={ingredients}
         addIngredient={addIngredient}
         removeIngredient={removeIngredient}
+        startOrdering={startOrdering}
         />
+      <Modal
+        show={ordering}
+        cancel={stopOrdering}>Hello</Modal>
     </div>
   );
 }

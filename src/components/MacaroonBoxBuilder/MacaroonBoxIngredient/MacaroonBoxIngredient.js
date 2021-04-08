@@ -2,9 +2,7 @@ import React from "react";
 
 import classes from "./MacaroonBoxIngredient.module.css";
 import blueMacaroonBackground from "../../../images/blueMacaroon.svg";
-import chocolateMacaroonBackground from "../../../images/chocolateMacaroon.svg";
 import creamMacaroonBackground from "../../../images/creamMacaroon.svg";
-import greenMacaroonBackground from "../../../images/greenMacaroon.svg";
 import lemonMacaroonBackground from "../../../images/lemonMacaroon.svg";
 import limeMacaroonBackground from "../../../images/limeMacaroon.svg";
 import mintMacaroonBackground from "../../../images/mintMacaroon.svg";
@@ -15,9 +13,7 @@ import yellowMacaroonBackground from "../../../images/yellowMacaroon.svg";
 const MacaroonBoxIngredient = ({ type, fixed }) => {
   const types = {
     blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`, width: "35px", height: "35px" },
-    chocolateMacaroon: { backgroundImage: `url(${chocolateMacaroonBackground})`, width: "35px", height: "35px" },
     creamMacaroon: { backgroundImage: `url(${creamMacaroonBackground})`, width: "10px", height: "10px" },
-    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`, width: "10px", height: "10px" },
     lemonMacaroon: { backgroundImage: `url(${lemonMacaroonBackground})`, width: "20px", height: "20px" },
     limeMacaroon: { backgroundImage: `url(${limeMacaroonBackground})`, width: "40px", height: "40px" },
     mintMacaroon: { backgroundImage: `url(${mintMacaroonBackground})`, width: "40px", height: "40px" },
