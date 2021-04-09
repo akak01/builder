@@ -1,0 +1,22 @@
+.NavItem a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: .5rem 1rem .4 rem;
+    border-bottom: 5px solid transparent ;
+    transition: all .2s ease-in;
+}
+.NavItem a:hover {
+    border-color: white;
+    background-color:red;
+}
+.NavItem a:active,
+.NavItem a.active {
+    border-color: white;
+}
+@media (max-width: 549px) {
+    .NavItem a {
+      border-right: 10px solid transparent;
+      border-bottom: none;
+    }
+  } 
