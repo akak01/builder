@@ -9,13 +9,9 @@ import Modal from "../UI/Modal/Modal";
 const MacaroonBoxBuilder = () => {
   const prices = {
     blueMacaroon: 35,
-    creamMacaroon: 20,
-    lemonMacaroon: 36,
-    limeMacaroon: 27,
-    mintMacaroon: 42,
-    redMacaroon: 38,
+    greenMacaroon: 20,
+    pinkMacaroon: 36,
     violetMacaroon: 29,
-    yellowMacaroon: 34,
   };
 
   const [ingredients, setIngredients] = useState({});

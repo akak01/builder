@@ -2,24 +2,15 @@ import React from "react";
 
 import classes from "./MacaroonBoxIngredient.module.css";
 import blueMacaroonBackground from "../../../images/blueMacaroon.svg";
-import creamMacaroonBackground from "../../../images/creamMacaroon.svg";
-import lemonMacaroonBackground from "../../../images/lemonMacaroon.svg";
-import limeMacaroonBackground from "../../../images/limeMacaroon.svg";
-import mintMacaroonBackground from "../../../images/mintMacaroon.svg";
-import redMacaroonBackground from "../../../images/redMacaroon.svg";
+import greenMacaroonBackground from "../../../images/greenMacaroon.svg";
+import pinkMacaroonBackground from "../../../images/pinkMacaroon.svg";
 import violetMacaroonBackground from "../../../images/violetMacaroon.svg";
-import yellowMacaroonBackground from "../../../images/yellowMacaroon.svg";
-
 const MacaroonBoxIngredient = ({ type, fixed }) => {
   const types = {
-    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`, width: "35px", height: "35px" },
-    creamMacaroon: { backgroundImage: `url(${creamMacaroonBackground})`, width: "10px", height: "10px" },
-    lemonMacaroon: { backgroundImage: `url(${lemonMacaroonBackground})`, width: "20px", height: "20px" },
-    limeMacaroon: { backgroundImage: `url(${limeMacaroonBackground})`, width: "40px", height: "40px" },
-    mintMacaroon: { backgroundImage: `url(${mintMacaroonBackground})`, width: "40px", height: "40px" },
-    redMacaroon: { backgroundImage: `url(${redMacaroonBackground})`, width: "40px", height: "40px" },
-    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "40px", height: "40px" },
-    yellowMacaroon: { backgroundImage: `url(${yellowMacaroonBackground})`, width: "40px", height: "40px" },
+    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`},
+    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`},
+    pinkMacaroon: { backgroundImage: `url(${pinkMacaroonBackground})`},
+    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`,},
   };
 
   function getPosition(ingredientWidth) {
