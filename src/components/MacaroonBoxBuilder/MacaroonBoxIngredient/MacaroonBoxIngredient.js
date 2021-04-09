@@ -5,12 +5,13 @@ import blueMacaroonBackground from "../../../images/blueMacaroon.svg";
 import greenMacaroonBackground from "../../../images/greenMacaroon.svg";
 import pinkMacaroonBackground from "../../../images/pinkMacaroon.svg";
 import violetMacaroonBackground from "../../../images/violetMacaroon.svg";
+
 const MacaroonBoxIngredient = ({ type, fixed }) => {
   const types = {
-    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`},
-    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`},
-    pinkMacaroon: { backgroundImage: `url(${pinkMacaroonBackground})`},
-    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`,},
+    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`, width: "50px", height: "35px"},
+    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`, width: "50px", height: "35px"},
+    pinkMacaroon: { backgroundImage: `url(${pinkMacaroonBackground})`, width: "50x", height: "35px"},
+    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "50px", height: "35px"},
   };
 
   function getPosition(ingredientWidth) {
