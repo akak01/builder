@@ -8,8 +8,11 @@ import Modal from "../UI/Modal/Modal";
 
 const MacaroonBoxBuilder = () => {
   const prices = {
+    blackMacaroon: 45,
     blueMacaroon: 35,
     greenMacaroon: 20,
+    lemonMacaroon: 25,
+    mintMacaroon: 40,
     pinkMacaroon: 36,
     violetMacaroon: 29,
   };
