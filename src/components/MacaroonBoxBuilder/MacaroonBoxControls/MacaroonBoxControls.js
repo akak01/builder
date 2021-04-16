@@ -6,10 +6,10 @@ const MacaroonBoxControls = ({
   ingredients,
   addIngredient,
   removeIngredient,
-  canBuy,
-  setIsBuying
+  startOrdering
 }) => {
   const results = [];
+  let total = 0;
   for (const ingredient in ingredients) {
     results.push(<MacaroonBoxControl
         key={ingredient}
