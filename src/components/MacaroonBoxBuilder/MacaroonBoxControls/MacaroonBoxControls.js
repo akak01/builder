@@ -22,9 +22,7 @@ const MacaroonBoxControls = ({
     <div className={classes.MacaroonBoxControls}>
       <strong>Ingredients</strong>
       {results}
-      <Button
-        onClick={() => setIsBuying(true)}
-        disabled={!canBuy}>
+      <Button>
           Order
       </Button>
     </div>
