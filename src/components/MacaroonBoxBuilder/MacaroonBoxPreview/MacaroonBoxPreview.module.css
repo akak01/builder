@@ -10,7 +10,7 @@
   height: 400px;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  background-color: #fcc067;
+  background-color: #e7c2ee;
 
   display: flex;
   justify-content: center;
@@ -23,10 +23,10 @@
   position: relative;
 }
 .price {
-  background-color: tomato;
+  background-color: skyblue;
   border-radius: 1rem;
   padding: 0 1rem;
   font-size: 1.5rem;
-  color: white;
+  color: black;
   font-weight: bold;
 }

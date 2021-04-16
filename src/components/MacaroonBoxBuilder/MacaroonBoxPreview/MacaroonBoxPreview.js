@@ -2,7 +2,6 @@ import MacaroonBoxIngredient from "../MacaroonBoxIngredient/MacaroonBoxIngredien
 
 import classes from "./MacaroonBoxPreview.module.css";
 
-
 const MacaroonBoxPreview = ({ ingredients, price }) => {
   const result = [];
   for (const ingredient in ingredients) {
@@ -14,7 +13,8 @@ const MacaroonBoxPreview = ({ ingredients, price }) => {
   return (
     <div className={classes.MacaroonBoxPreview}>
       <div className={classes.macaroon}>
-        <div className={classes.ingredients}>
+        <div 
+          className={classes.ingredients}>
           {result}
         </div>
       </div>
