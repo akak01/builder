@@ -1,22 +1,27 @@
 .Button {
-    font-family: 'Dancing Script', cursive;
-    border: 0;
-    margin: 0 .5rem;
-    border-radius: 2rem;
-    min-width: 2rem;
-    padding: 0 1rem;
-    background-color: rgb(213, 233, 247);
-    color: black;
-    font-weight: bold;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .Button:not(:disabled):hover {
-    background-color: rgb(7, 193, 218);
-  }
-  .Button:focus {
-    outline: none;
-  }
-  .Button:disabled {
-    opacity: .4;
-  }
+  border: 0;
+  margin: 0 .5rem;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  background-color: rgb(133, 241, 255);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.Button:not(:disabled):hover {
+  background-color: rgb(0, 138, 172);
+}
+.Button:focus {
+  outline: none;
+}
+.Button:disabled {
+  opacity: .5;
+}
+
+.green {
+  background-color: rgb(133, 200, 255);
+}
+.green:not(:disabled):hover {
+  background-color: rgb(0, 172, 172);
+}

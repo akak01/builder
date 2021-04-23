@@ -7,13 +7,13 @@ const CheckoutSummary = ({ cancelCallback }) => {
     <div className={classes.CheckoutSummary}>
       <div>
         <MacaroonBoxPreview ingredients={{
-         blackMacaroon: 45,
-         blueMacaroon: 35,
-         greenMacaroon: 20,
-         lemonMacaroon: 25,
-         mintMacaroon: 40,
-         pinkMacaroon: 36,
-         violetMacaroon: 29,
+         blackMacaroon: 5,
+         blueMacaroon: 3,
+         greenMacaroon: 2,
+         lemonMacaroon: 2,
+         mintMacaroon: 4,
+         pinkMacaroon: 3,
+         violetMacaroon: 2,
         }} price={150} />
       </div>
       <div>

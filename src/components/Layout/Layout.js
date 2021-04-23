@@ -11,7 +11,9 @@ const Layout = ({ children }) => {
     <div className={classes.Layout}>
       <Toolbar openDrawer={() => setDrawerOpen(true)} />
       <Drawer open={drawerOpen} closeDrawer={() => setDrawerOpen(false)} />
-      {children}
+      <main>
+        {children}
+      </main>
     </div>
   );
 }

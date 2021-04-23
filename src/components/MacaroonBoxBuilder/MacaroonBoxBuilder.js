@@ -8,7 +8,7 @@ import Modal from "../UI/Modal/Modal";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
 
-const MacaroonBoxBuilder = () => {
+const MacaroonBoxBuilder = ({ history }) => {
   const prices = {
     blackMacaroon: 45,
     blueMacaroon: 35,
@@ -23,13 +23,20 @@ const MacaroonBoxBuilder = () => {
   const [price, setPrice] = useState(0);
   const [ordering, setOrdering] = useState(false);
 
-  useEffect(() => {
-    axios.get('https://builder-883f2-default-rtdb.firebaseio.com/default.json')
-    .then(response => {
-      setIngredients(response.data.ingredients);
-      setPrice(response.data.price);
-    });
-  }, []);
+  useEffect(loadDefaults, []);
+
+  function loadDefaults() {
+    axios
+      .get('https://builder-883f2-default-rtdb.firebaseio.com/default.json')
+      .then(response => {
+        setPrice(response.data.price);
+
+        // For arrays
+        // setIngredients(Object.values(response.data.ingredients));
+        // For objects
+        setIngredients(response.data.ingredients);
+      });
+  }
 
   function addIngredient(type) {
     const newIngredients = { ...ingredients };
@@ -46,7 +53,7 @@ const MacaroonBoxBuilder = () => {
       setIngredients(newIngredients);
     }
   }
-  
+
   function startOrdering() {
     setOrdering(true);
   }
@@ -55,8 +62,24 @@ const MacaroonBoxBuilder = () => {
     setOrdering(false);
   }
 
+  function finishOrdering() {
+    axios
+      .post('https://builder-883f2-default-rtdb.firebaseio.com/default.json', {
+        ingredients: ingredients,
+        price: price,
+        address: "99 Toktogul str",
+        phone: "0 999 999 999",
+        name: "Jay Park",
+      })
+      .then(() => {
+        setOrdering(false);
+        loadDefaults();
+        history.push('/checkout');
+      });
+  }
+
   return (
-    <div className={classes.MacaroonBuilder}>
+    <div className={classes.MacaroonBoxBuilder}>
       <MacaroonBoxPreview
         ingredients={ingredients}
         price={price} />
@@ -68,7 +91,14 @@ const MacaroonBoxBuilder = () => {
         />
       <Modal
         show={ordering}
-        cancel={stopOrdering}>Hello</Modal>
+        cancel={stopOrdering}>
+          <OrderSummary
+            ingredients={ingredients}
+            price={price}
+            />
+          <Button onClick={finishOrdering} green>Checkout</Button>
+          <Button onClick={stopOrdering}>Cancel</Button>
+        </Modal>
     </div>
   );
 }

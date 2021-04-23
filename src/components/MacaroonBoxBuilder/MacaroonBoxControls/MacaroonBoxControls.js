@@ -11,10 +11,12 @@ const MacaroonBoxControls = ({
   const results = [];
   let total = 0;
   for (const ingredient in ingredients) {
+    total += ingredients[ingredient];
     results.push(<MacaroonBoxControl
         key={ingredient}
         add={addIngredient}
         remove={removeIngredient}
+        count={ingredients[ingredient]}
         type={ingredient} />)
   }
 
@@ -22,9 +24,7 @@ const MacaroonBoxControls = ({
     <div className={classes.MacaroonBoxControls}>
       <strong>Ingredients</strong>
       {results}
-      <Button>
-          Order
-      </Button>
+      <Button disabled={!total} onClick={startOrdering}>Order</Button>
     </div>
   );
 }
