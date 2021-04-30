@@ -1,11 +1,10 @@
 import MacaroonBoxPreview from "./MacaroonBoxPreview/MacaroonBoxPreview";
 import MacaroonBoxControls from "./MacaroonBoxControls/MacaroonBoxControls";
-
+import OrderSummary from "./OrderSummary/OrderSummary";
 import classes from "./MacaroonBoxBuilder.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "../UI/Modal/Modal";
-import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
 
 const MacaroonBoxBuilder = ({ history }) => {
@@ -19,7 +18,7 @@ const MacaroonBoxBuilder = ({ history }) => {
     violetMacaroon: 29,
   };
 
-  const [ingredients, setIngredients] = useState({});
+  const [macaroons, setMacaroons] = useState({});
   const [price, setPrice] = useState(0);
   const [ordering, setOrdering] = useState(false);
 
@@ -31,26 +30,23 @@ const MacaroonBoxBuilder = ({ history }) => {
       .then(response => {
         setPrice(response.data.price);
 
-        // For arrays
-        // setIngredients(Object.values(response.data.ingredients));
-        // For objects
-        setIngredients(response.data.ingredients);
+        setMacaroons(response.data.macaroons);
       });
   }
 
-  function addIngredient(type) {
-    const newIngredients = { ...ingredients };
-    newIngredients[type]++;
+  function addMacaroon(type) {
+    const newMacaroons = { ...macaroons };
+    newMacaroons[type]++;
     setPrice(price + prices[type]);
-    setIngredients(newIngredients);
+    setMacaroons(newMacaroons);
   }
 
-  function removeIngredient(type) {
-    if (ingredients[type]) {
-      const newIngredients = { ...ingredients };
-      newIngredients[type]--;
+  function removeMacaroon(type) {
+    if (macaroons[type]) {
+      const newMacaroons = { ...macaroons };
+      newMacaroons[type]--;
       setPrice(price - prices[type]);
-      setIngredients(newIngredients);
+      setMacaroons(newMacaroons);
     }
   }
 
@@ -65,7 +61,7 @@ const MacaroonBoxBuilder = ({ history }) => {
   function finishOrdering() {
     axios
       .post('https://builder-883f2-default-rtdb.firebaseio.com/default.json', {
-        ingredients: ingredients,
+        macaroons: macaroons,
         price: price,
         address: "99 Toktogul str",
         phone: "0 999 999 999",
@@ -81,19 +77,19 @@ const MacaroonBoxBuilder = ({ history }) => {
   return (
     <div className={classes.MacaroonBoxBuilder}>
       <MacaroonBoxPreview
-        ingredients={ingredients}
+        macaroons={macaroons}
         price={price} />
       <MacaroonBoxControls
-        ingredients={ingredients}
-        addIngredient={addIngredient}
-        removeIngredient={removeIngredient}
+        macaroons={macaroons}
+        addMacaroon={addMacaroon}
+        removeMacaroon={removeMacaroon}
         startOrdering={startOrdering}
         />
       <Modal
         show={ordering}
         cancel={stopOrdering}>
           <OrderSummary
-            ingredients={ingredients}
+            macaroons={macaroons}
             price={price}
             />
           <Button onClick={finishOrdering} green>Checkout</Button>

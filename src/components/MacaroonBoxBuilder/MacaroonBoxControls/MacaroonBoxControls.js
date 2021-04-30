@@ -3,26 +3,26 @@ import MacaroonBoxControl from "./MacaroonBoxControl/MacaroonBoxControl";
 import classes from "./MacaroonBoxControls.module.css";
 
 const MacaroonBoxControls = ({
-  ingredients,
-  addIngredient,
-  removeIngredient,
+  macaroons,
+  addMacaroon,
+  removeMacaroon,
   startOrdering
 }) => {
   const results = [];
   let total = 0;
-  for (const ingredient in ingredients) {
-    total += ingredients[ingredient];
+  for (const macaroon in macaroons) {
+    total += macaroons[macaroon];
     results.push(<MacaroonBoxControl
-        key={ingredient}
-        add={addIngredient}
-        remove={removeIngredient}
-        count={ingredients[ingredient]}
-        type={ingredient} />)
+        key={macaroon}
+        add={addMacaroon}
+        remove={removeMacaroon}
+        count={macaroons[macaroon]}
+        type={macaroon} />)
   }
 
   return (
     <div className={classes.MacaroonBoxControls}>
-      <strong>Ingredients</strong>
+      <strong>Macaroons</strong>
       {results}
       <Button disabled={!total} onClick={startOrdering}>Order</Button>
     </div>

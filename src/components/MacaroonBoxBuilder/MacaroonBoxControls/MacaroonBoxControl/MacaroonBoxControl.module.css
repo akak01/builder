@@ -4,7 +4,7 @@
     align-items: center;
     margin: .5rem 0;
   }
-  .MacaroonBoxControl .ingredient div {
+  .MacaroonBoxControl .macaroon div {
     position: static;
     margin: 0 .5rem;
   }

@@ -1,12 +1,11 @@
-import MacaroonBoxIngredient from "../MacaroonBoxIngredient/MacaroonBoxIngredient";
-
+import Macaroons from "../Macaroons/Macaroons";
 import classes from "./MacaroonBoxPreview.module.css";
 
-const MacaroonBoxPreview = ({ ingredients, price }) => {
+const MacaroonBoxPreview = ({ macaroons, price }) => {
   const result = [];
-  for (const ingredient in ingredients) {
-    for (let i = 0; i < ingredients[ingredient]; i++) {
-      result.push(<MacaroonBoxIngredient key={ingredient + i} type={ingredient} />)
+  for (const macaroon in macaroons) {
+    for (let i = 0; i < macaroons[macaroon]; i++) {
+      result.push(<Macaroons key={macaroon + i} type={macaroon} />)
     }
   }
 
@@ -14,7 +13,7 @@ const MacaroonBoxPreview = ({ ingredients, price }) => {
     <div className={classes.MacaroonBoxPreview}>
       <div className={classes.macaroon}>
         <div 
-          className={classes.ingredients}>
+          className={classes.macaroons}>
           {result}
         </div>
       </div>
