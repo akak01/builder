@@ -22,7 +22,7 @@ const MacaroonBoxControls = ({
 
   return (
     <div className={classes.MacaroonBoxControls}>
-      <strong>Macaroons</strong>
+      <strong id="M">Macaroons</strong>
       {results}
       <Button disabled={!total} onClick={startOrdering}>Order</Button>
     </div>

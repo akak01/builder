@@ -11,7 +11,7 @@ const MacaroonBoxPreview = ({ macaroons, price }) => {
 
   return (
     <div className={classes.MacaroonBoxPreview}>
-      <div className={classes.macaroon}>
+      <div className={classes.macaroonBox}>
         <div 
           className={classes.macaroons}>
           {result}

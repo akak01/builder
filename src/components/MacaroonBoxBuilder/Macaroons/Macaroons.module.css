@@ -1,3 +1,10 @@
 .Macaroons {
-    position: absolute;
-  } 
+  display: flex ;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-size: cover;
+  transform: rotate(90deg);
+} 
+
+    

@@ -10,13 +10,13 @@ import violetMacaroonBackground from "../../../images/violetMacaroon.svg";
 
 const Macaroons = ({ type, fixed }) => {
   const types = {
-    blackMacaroon: { backgroundImage: `url(${blackMacaroonBackground})`, width: "35px", height: "35px" },
-    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`, width: "35px", height: "35px" },
-    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`, width: "35px", height: "35px" },
-    lemonMacaroon: { backgroundImage: `url(${lemonMacaroonBackground})`, width: "35px", height: "35px" },
-    mintMacaroon: { backgroundImage: `url(${mintMacaroonBackground})`, width: "35px", height: "35px" },
-    pinkMacaroon: { backgroundImage: `url(${pinkMacaroonBackground})`, width: "35px", height: "35px" },
-    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "35px", height: "35px" },
+    blackMacaroon: { backgroundImage: `url(${blackMacaroonBackground})`, width: "40px", height: "40px" },
+    blueMacaroon: { backgroundImage: `url(${blueMacaroonBackground})`, width: "40px", height: "40px" },
+    greenMacaroon: { backgroundImage: `url(${greenMacaroonBackground})`, width: "40px", height: "40px" },
+    lemonMacaroon: { backgroundImage: `url(${lemonMacaroonBackground})`, width: "40px", height: "40px" },
+    mintMacaroon: { backgroundImage: `url(${mintMacaroonBackground})`, width: "40px", height: "40px" },
+    pinkMacaroon: { backgroundImage: `url(${pinkMacaroonBackground})`, width: "40px", height: "40px" },
+    violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "40px", height: "40px" },
   };
 
   return (

@@ -1,6 +1,7 @@
 .Logo {
   display: flex;
   align-items: center;
+  color: black;
 }
 .Logo img {
   height: 3rem;

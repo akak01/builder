@@ -15,13 +15,13 @@ const Checkout = ({ history }) => {
       phone: data.get('phone'),
       address: data.get('address'),
       macaroons: {
-        blackMacaroon: 0,
-        blueMacaroon: 5,
-        greenMacaroon: 6,
-        lemonMacaroon: 10,
-        mintMacaroon: 10,
-        pinkMacaroon: 10,
-        violetMacaroon: 5,
+        blackMacaroon: 2,
+        blueMacaroon: 2,
+        greenMacaroon: 2,
+        lemonMacaroon: 2,
+        mintMacaroon: 2,
+        pinkMacaroon: 2,
+        violetMacaroon: 2,
       }
     }
 
