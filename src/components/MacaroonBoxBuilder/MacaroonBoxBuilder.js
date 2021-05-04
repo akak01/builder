@@ -19,7 +19,7 @@ const MacaroonBoxBuilder = ({ history }) => {
   };
 
   const macaroons = useSelector(state => state.macaroons);
-  const [price, setPrice] = useState(0);
+  const price = useSelector(state => state.price);
   const [ordering, setOrdering] = useState(false);
 
   // useEffect(loadDefaults, []);
@@ -33,20 +33,6 @@ const MacaroonBoxBuilder = ({ history }) => {
   //       setMacaroons(response.data.macaroons);
   //     });
   // }
-
-  function addMacaroon(type) {
-    const newMacaroons = { ...macaroons };
-    newMacaroons[type]++;
-    setPrice(price + prices[type]);
-  }
-
-  function removeMacaroon(type) {
-    if (macaroons[type]) {
-      const newMacaroons = { ...macaroons };
-      newMacaroons[type]--;
-      setPrice(price - prices[type]);
-    }
-  }
 
   function startOrdering() {
     setOrdering(true);
@@ -79,8 +65,6 @@ const MacaroonBoxBuilder = ({ history }) => {
         price={price} />
       <MacaroonBoxControls
         macaroons={macaroons}
-        addMacaroon={addMacaroon}
-        removeMacaroon={removeMacaroon}
         startOrdering={startOrdering}
         />
       <Modal

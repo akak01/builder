@@ -4,8 +4,6 @@ import classes from "./MacaroonBoxControls.module.css";
 
 const MacaroonBoxControls = ({
   macaroons,
-  addMacaroon,
-  removeMacaroon,
   startOrdering
 }) => {
   const results = [];
@@ -14,8 +12,6 @@ const MacaroonBoxControls = ({
     total += macaroons[macaroon];
     results.push(<MacaroonBoxControl
         key={macaroon}
-        add={addMacaroon}
-        remove={removeMacaroon}
         count={macaroons[macaroon]}
         type={macaroon} />)
   }

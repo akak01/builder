@@ -7,7 +7,8 @@ const instalState = {
       mintMacaroon: 5,
       pinkMacaroon: 5,
       violetMacaroon: 5,
-    }
+    },
+    price:200,
 };
 
 const builderReduser = (state = initialState, action) => {
@@ -15,13 +16,14 @@ const builderReduser = (state = initialState, action) => {
 
     switch (action.type) {
         case "ADD_MACAROON":
-            newState.macaroons[action.macaroon]++:
+            newState.macaroons[action.macaroon]++;
             break;
         case "REMOVE_MACAROON":
-            newState.macaroon[action.macaroon]--;
+            newState.macaroons[action.macaroon]--;
             break;
+
         default;
-        break;    
+          break;    
     }
     return state;
 }
