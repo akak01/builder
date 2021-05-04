@@ -18,27 +18,26 @@ const MacaroonBoxBuilder = ({ history }) => {
     violetMacaroon: 29,
   };
 
-  const [macaroons, setMacaroons] = useState({});
+  const macaroons = useSelector(state => state.macaroons);
   const [price, setPrice] = useState(0);
   const [ordering, setOrdering] = useState(false);
 
-  useEffect(loadDefaults, []);
+  // useEffect(loadDefaults, []);
 
-  function loadDefaults() {
-    axios
-      .get('https://builder-883f2-default-rtdb.firebaseio.com/default.json')
-      .then(response => {
-        setPrice(response.data.price);
+  // function loadDefaults() {
+  //   axios
+  //     .get('https://builder-883f2-default-rtdb.firebaseio.com/default.json')
+  //     .then(response => {
+  //       setPrice(response.data.price);
 
-        setMacaroons(response.data.macaroons);
-      });
-  }
+  //       setMacaroons(response.data.macaroons);
+  //     });
+  // }
 
   function addMacaroon(type) {
     const newMacaroons = { ...macaroons };
     newMacaroons[type]++;
     setPrice(price + prices[type]);
-    setMacaroons(newMacaroons);
   }
 
   function removeMacaroon(type) {
@@ -46,7 +45,6 @@ const MacaroonBoxBuilder = ({ history }) => {
       const newMacaroons = { ...macaroons };
       newMacaroons[type]--;
       setPrice(price - prices[type]);
-      setMacaroons(newMacaroons);
     }
   }
 
@@ -58,21 +56,21 @@ const MacaroonBoxBuilder = ({ history }) => {
     setOrdering(false);
   }
 
-  function finishOrdering() {
-    axios
-      .post('https://builder-883f2-default-rtdb.firebaseio.com/default.json', {
-        macaroons: macaroons,
-        price: price,
-        address: "99 Toktogul str",
-        phone: "0 999 999 999",
-        name: "Jay Park",
-      })
-      .then(() => {
-        setOrdering(false);
-        loadDefaults();
-        history.push('/checkout');
-      });
-  }
+  // function finishOrdering() {
+  //   axios
+  //     .post('https://builder-883f2-default-rtdb.firebaseio.com/default.json', {
+  //       macaroons: macaroons,
+  //       price: price,
+  //       address: "99 Toktogul str",
+  //       phone: "0 999 999 999",
+  //       name: "Jay Park",
+  //     })
+  //     .then(() => {
+  //       setOrdering(false);
+  //       loadDefaults();
+  //       history.push('/checkout');
+  //     });
+  // }
 
   return (
     <div className={classes.MacaroonBoxBuilder}>

@@ -1,15 +1,18 @@
+import { useDispatch } from "react-redux";
 import Button from "../../../UI/Button/Button";
 import Macaroons from "../../Macaroons/Macaroons";
 import classes from "./MacaroonBoxControl.module.css";
 
-const MacaroonBoxControl = ({ type, add, remove, count }) => {
+const MacaroonBoxControl = ({ type, count }) => {
+  const dispatch = useDispatch ();
+
   return (
     <div className={classes.MacaroonBoxControl}>
-      <Button onClick={() => add(type)}>+</Button>
+      <Button onClick={() => dispatch({ type: "ADD_MACAROON", macaroon: type})}>+</Button>
       <div className={classes.macaroon}>
         <Macaroons type={type} fixed />
       </div>
-      <Button onClick={() => remove(type)} disabled={!count}>-</Button>
+      <Button onClick={dispatch({ type: "REMOVE_MACAROON", macaroon: type})} disabled={!count}>-</Button>
     </div>
   );
 }
