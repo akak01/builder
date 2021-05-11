@@ -2,19 +2,13 @@ import classes from "./CheckoutSummary.module.css";
 import MacaroonBoxPreview from "../../MacaroonBoxBuilder/MacaroonBoxPreview/MacaroonBoxPreview";
 import CheckoutForm from "./ChackoutForm/CheckoutForm";
 
-const CheckoutSummary = ({ submitCallback, cancelCallback }) => {
+const CheckoutSummary = ({ submitCallback, cancelCallback, macaroons, price }) => {
   return (
     <div className={classes.CheckoutSummary}>
       <div>
-        <MacaroonBoxPreview macaroons={{
-         blackMacaroon: 2,
-         blueMacaroon: 2,
-         greenMacaroon: 2,
-         lemonMacaroon: 2,
-         mintMacaroon: 2,
-         pinkMacaroon: 2,
-         violetMacaroon: 2,
-        }} price={280} />
+        <MacaroonBoxPreview 
+        macaroons={macaroons} 
+        price={price} />
       </div>
       <CheckoutForm
         submitCallback={submitCallback}

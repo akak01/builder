@@ -1,7 +1,10 @@
 import axios from "axios";
-import CheckoutSummary from "./CheckoutSummary/CheckoutSummary"
+import CheckoutSummary from "./CheckoutSummary/CheckoutSummary";
+import { useSelector } from "react-redux";
 
 const Checkout = ({ history }) => {
+  const macaroons = useSelector(state => state.builder.macaroons);
+  const price = useSelector(state => state.builder.price);
   function cancelCallback() {
     history.replace('/');
   }
@@ -14,15 +17,8 @@ const Checkout = ({ history }) => {
       name: data.get('name'),
       phone: data.get('phone'),
       address: data.get('address'),
-      macaroons: {
-        blackMacaroon: 2,
-        blueMacaroon: 2,
-        greenMacaroon: 2,
-        lemonMacaroon: 2,
-        mintMacaroon: 2,
-        pinkMacaroon: 2,
-        violetMacaroon: 2,
-      }
+      macaroons: macaroons,
+      price: price,
     }
 
     axios.post('https://builder-883f2-default-rtdb.firebaseio.com/orders.json', order)
@@ -34,8 +30,11 @@ const Checkout = ({ history }) => {
   return (
     <div>
       <CheckoutSummary
+        macaroons={macaroons}
+        price={price}
         submitCallback={submitCallback}
-        cancelCallback={cancelCallback} />
+        cancelCallback={cancelCallback}
+         />
     </div>
   );
 }

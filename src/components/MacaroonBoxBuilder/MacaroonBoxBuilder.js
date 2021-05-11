@@ -6,20 +6,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "../UI/Modal/Modal";
 import Button from "../UI/Button/Button";
+import { useSelector } from "react-redux";
 
 const MacaroonBoxBuilder = ({ history }) => {
-  const prices = {
-    blackMacaroon: 45,
-    blueMacaroon: 35,
-    greenMacaroon: 20,
-    lemonMacaroon: 25,
-    mintMacaroon: 40,
-    pinkMacaroon: 36,
-    violetMacaroon: 29,
-  };
 
-  const macaroons = useSelector(state => state.macaroons);
-  const price = useSelector(state => state.price);
+  const macaroons = useSelector(state => state.builder.macaroons);
+  const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
 
   // useEffect(loadDefaults, []);
@@ -42,21 +34,12 @@ const MacaroonBoxBuilder = ({ history }) => {
     setOrdering(false);
   }
 
-  // function finishOrdering() {
-  //   axios
-  //     .post('https://builder-883f2-default-rtdb.firebaseio.com/default.json', {
-  //       macaroons: macaroons,
-  //       price: price,
-  //       address: "99 Toktogul str",
-  //       phone: "0 999 999 999",
-  //       name: "Jay Park",
-  //     })
-  //     .then(() => {
-  //       setOrdering(false);
-  //       loadDefaults();
-  //       history.push('/checkout');
-  //     });
-  // }
+  function finishOrdering() {
+      setOrdering(false);
+      //loadDefaults();
+       history.push('/checkout');
+
+  }
 
   return (
     <div className={classes.MacaroonBoxBuilder}>
