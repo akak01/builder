@@ -1,30 +1,22 @@
 import MacaroonBoxPreview from "./MacaroonBoxPreview/MacaroonBoxPreview";
 import MacaroonBoxControls from "./MacaroonBoxControls/MacaroonBoxControls";
-import OrderSummary from "./OrderSummary/OrderSummary";
+import withAxios from "../withAxios";
+import axios from "../../axios";
 import classes from "./MacaroonBoxBuilder.module.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Modal from "../UI/Modal/Modal";
+import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { load } from "../../store/actions/builder";
 
 const MacaroonBoxBuilder = ({ history }) => {
-
+  const dispatch = useDispatch();
   const macaroons = useSelector(state => state.builder.macaroons);
   const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
 
-  // useEffect(loadDefaults, []);
-
-  // function loadDefaults() {
-  //   axios
-  //     .get('https://builder-883f2-default-rtdb.firebaseio.com/default.json')
-  //     .then(response => {
-  //       setPrice(response.data.price);
-
-  //       setMacaroons(response.data.macaroons);
-  //     });
-  // }
+  useEffect(() => dispatch(load()), [dispatch]);
 
   function startOrdering() {
     setOrdering(true);
@@ -64,4 +56,4 @@ const MacaroonBoxBuilder = ({ history }) => {
   );
 }
 
-export default MacaroonBoxBuilder;
+export default withAxios(MacaroonBoxBuilder, axios);

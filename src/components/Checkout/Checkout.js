@@ -1,42 +1,42 @@
-import axios from "axios";
-import CheckoutSummary from "./CheckoutSummary/CheckoutSummary";
+import MacaroonBoxPreview from "../MacaroonBoxBuilder/MacaroonBoxPreview/MacaroonBoxPreview";
+import CheckoutForm from "./ChackoutForm/CheckoutForm";
+import classes from "./Checkout.module.css";
+import axios from "../../axios";
 import { useSelector } from "react-redux";
+import withAxios from "../withAxios";
 
 const Checkout = ({ history }) => {
   const macaroons = useSelector(state => state.builder.macaroons);
   const price = useSelector(state => state.builder.price);
+
   function cancelCallback() {
     history.replace('/');
   }
 
   function submitCallback(event) {
-    event.preventDefault();
-
     const data = new FormData(event.target);
-    const order = {
+
+    axios.post('/orders.json', {
       name: data.get('name'),
-      phone: data.get('phone'),
       address: data.get('address'),
+      phone: data.get('phone'),
       macaroons: macaroons,
       price: price,
-    }
+    }).then(response => {
+      history.replace('/');
+    });
 
-    axios.post('https://builder-883f2-default-rtdb.firebaseio.com/orders.json', order)
-      .then(response => {
-        history.replace('/');
-      });
+    event.preventDefault();
   }
 
   return (
-    <div>
-      <CheckoutSummary
-        macaroons={macaroons}
-        price={price}
-        submitCallback={submitCallback}
+    <div className={classes.Checkout}>
+      <MacaroonBoxPreview macaroons={macaroons} price={price} />
+      <CheckoutForm
         cancelCallback={cancelCallback}
-         />
+        submitCallback={submitCallback} />
     </div>
   );
 }
  
-export default Checkout;
+export default withAxios(Checkout, axios);

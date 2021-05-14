@@ -1,44 +1,40 @@
-import { useState } from "react";
+import { ADD_MACAROON, REMOVE_MACAROON, SET_MACAROONS } from "../actions/types";
 
 const initialState = {
     macaroons:{
-      blackMacaroon: 5,
-      blueMacaroon: 5,
-      greenMacaroon: 5,
-      lemonMacaroon: 5,
-      mintMacaroon: 5,
-      pinkMacaroon: 5,
-      violetMacaroon: 5,
     },
-    price:200,
+    price:0,
 };
 const prices = {
-    blackMacaroon: 45,
-    blueMacaroon: 35,
-    greenMacaroon: 20,
-    lemonMacaroon: 25,
-    mintMacaroon: 40,
-    pinkMacaroon: 36,
-    violetMacaroon: 29,
+    blackMacaroon: 0,
+    blueMacaroon: 0,
+    greenMacaroon: 0,
+    lemonMacaroon: 0,
+    mintMacaroon: 0,
+    pinkMacaroon: 0,
+    violetMacaroon: 0,
 };
 
 const builder = (state = initialState, action) => {
     const newState = { ...state };
-
+  
     switch (action.type) {
-        case "ADD_MACAROON":
-            newState.macaroons[action.macaroon]++;
-            useState.price += prices[action.macaroon];
-            break;
-        case "REMOVE_MACAROON":
-            newState.macaroons[action.macaroon]--;
-            newState.price -= prices[action.macaroon];
-            break;
-
-        default:
-          break;    
+      case ADD_MACAROON:
+        newState.macaroons[action.macaroon]++;
+        newState.price += prices[action.macaroon];
+        break;
+      case REMOVE_MACAROON:
+        newState.macaroons[action.macaroon]--;
+        newState.price -= prices[action.macaroon];
+        break;
+      case SET_MACAROONS:
+        return { ...action.data };
+    
+      default:
+        break;
     }
-    return state;
-}
+  
+    return newState;
+  }
 
 export default builder;
