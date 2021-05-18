@@ -12,8 +12,7 @@ import { load } from "../../store/actions/builder";
 
 const MacaroonBoxBuilder = ({ history }) => {
   const dispatch = useDispatch();
-  const macaroons = useSelector(state => state.builder.macaroons);
-  const price = useSelector(state => state.builder.price);
+  const { macaroons, price} = useSelector(state => state.builder);
   const [ordering, setOrdering] = useState(false);
 
   useEffect(() => dispatch(load()), [dispatch]);
@@ -49,7 +48,7 @@ const MacaroonBoxBuilder = ({ history }) => {
             macaroons={macaroons}
             price={price}
             />
-          <Button onClick={finishOrdering} green>Checkout</Button>
+          <Button onClick={finishOrdering} green="green">Checkout</Button>
           <Button onClick={stopOrdering}>Cancel</Button>
         </Modal>
     </div>

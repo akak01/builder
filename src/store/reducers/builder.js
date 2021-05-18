@@ -1,18 +1,18 @@
 import { ADD_MACAROON, REMOVE_MACAROON, SET_MACAROONS } from "../actions/types";
 
 const initialState = {
-    macaroons:{
+    macaroons: {
     },
-    price:0,
+    price: 0,
 };
 const prices = {
-    blackMacaroon: 0,
-    blueMacaroon: 0,
-    greenMacaroon: 0,
-    lemonMacaroon: 0,
-    mintMacaroon: 0,
-    pinkMacaroon: 0,
-    violetMacaroon: 0,
+    blackMacaroon: 30,
+    blueMacaroon: 20,
+    greenMacaroon: 25,
+    lemonMacaroon: 35,
+    mintMacaroon: 25,
+    pinkMacaroon: 30,
+    violetMacaroon: 20,
 };
 
 const builder = (state = initialState, action) => {

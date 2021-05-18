@@ -11,14 +11,14 @@ const MacaroonBoxControls = ({
   for (const macaroon in macaroons) {
     total += macaroons[macaroon];
     results.push(<MacaroonBoxControl
-        key={macaroon}
-        count={macaroons[macaroon]}
-        type={macaroon} />)
+      key={macaroon}
+      count={macaroons[macaroon]}
+      type={macaroon} />)
   }
 
   return (
     <div className={classes.MacaroonBoxControls}>
-      <strong id="M">Macaroons</strong>
+      <h2>Macaroons</h2>
       {results}
       <Button disabled={!total} onClick={startOrdering}>Order</Button>
     </div>
