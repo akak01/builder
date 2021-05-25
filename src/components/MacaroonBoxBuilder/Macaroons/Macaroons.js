@@ -20,13 +20,13 @@ const Macaroons = ({ type, fixed }) => {
     violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "55px", height: "55px" },
   };
 
-  function getPosition(macaroontWidth) {
+  function getPosition(macaroonWidth) {
     const plateDiameter = 380;
     const plateRadius = plateDiameter / 2;
-    const macaroonRadius = parseInt(macaroontWidth) / 2;
+    const macaroonRadius = parseInt(macaroonWidth) / 2;
 
     const macaroonTop = Math.round(Math.random() * plateDiameter);
-    const macaroontLeft = Math.round(Math.random() * plateDiameter);
+    const macaroonLeft = Math.round(Math.random() * plateDiameter);
 
     const distance = Math.sqrt(
       Math.pow(macaroonTop - plateRadius, 2) + Math.pow(macaroonLeft - plateRadius, 2)

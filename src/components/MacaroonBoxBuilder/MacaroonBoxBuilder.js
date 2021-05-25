@@ -25,7 +25,6 @@ const MacaroonBoxBuilder = ({ history }) => {
     else {
       history.push('/auth');
     }
-    
   }
 
   function stopOrdering() {
