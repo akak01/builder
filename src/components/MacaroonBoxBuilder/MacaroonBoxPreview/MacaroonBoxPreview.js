@@ -1,5 +1,7 @@
 import Macaroons from "../Macaroons/Macaroons";
+
 import classes from "./MacaroonBoxPreview.module.css";
+import macaroonsBackground from "../../../images/plate.jpg";
 
 const MacaroonBoxPreview = ({ macaroons, price }) => {
   const result = [];
@@ -13,7 +15,8 @@ const MacaroonBoxPreview = ({ macaroons, price }) => {
     <div className={classes.MacaroonBoxPreview}>
       <div className={classes.macaroonBox}>
         <div 
-          className={classes.macaroons}>
+          className={classes.macaroons}
+          style={{ backroundImage: `url(${macaroonsBackground})`}}>
           {result}
         </div>
       </div>

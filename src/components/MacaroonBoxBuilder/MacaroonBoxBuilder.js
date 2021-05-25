@@ -12,13 +12,20 @@ import { load } from "../../store/actions/builder";
 
 const MacaroonBoxBuilder = ({ history }) => {
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
   const { macaroons, price} = useSelector(state => state.builder);
   const [ordering, setOrdering] = useState(false);
 
   useEffect(() => dispatch(load()), [dispatch]);
 
   function startOrdering() {
-    setOrdering(true);
+    if (isAuthenticated) {
+      setOrdering(true);
+    }
+    else {
+      history.push('/auth');
+    }
+    
   }
 
   function stopOrdering() {

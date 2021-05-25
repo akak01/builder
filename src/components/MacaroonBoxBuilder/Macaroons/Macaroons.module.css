@@ -1,9 +1,5 @@
 .Macaroons {
-  display: block ;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-size: cover;
+  position: absolute;
 } 
 
     

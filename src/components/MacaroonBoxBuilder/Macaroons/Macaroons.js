@@ -1,5 +1,6 @@
-import classes from "./Macaroons.module.css";
+import React from "react";
 
+import classes from "./Macaroons.module.css";
 import blackMacaroonBackground from "../../../images/blackMacaroon.svg";
 import blueMacaroonBackground from "../../../images/blueMacaroon.svg";
 import greenMacaroonBackground from "../../../images/greenMacaroon.svg";
@@ -19,9 +20,37 @@ const Macaroons = ({ type, fixed }) => {
     violetMacaroon: { backgroundImage: `url(${violetMacaroonBackground})`, width: "55px", height: "55px" },
   };
 
+  function getPosition(macaroontWidth) {
+    const plateDiameter = 380;
+    const plateRadius = plateDiameter / 2;
+    const macaroonRadius = parseInt(macaroontWidth) / 2;
+
+    const macaroonTop = Math.round(Math.random() * plateDiameter);
+    const macaroontLeft = Math.round(Math.random() * plateDiameter);
+
+    const distance = Math.sqrt(
+      Math.pow(macaroonTop - plateRadius, 2) + Math.pow(macaroonLeft - plateRadius, 2)
+    ) + macaroonRadius;
+
+    return distance < plateRadius
+      ? {
+        top: macaroonTop - macaroonRadius,
+        left: macaroonLeft - macaroonRadius
+      }
+      : getPosition(macaroonWidth);
+  }
+
+  if (!fixed) {
+    const position = getPosition(types[type].width);
+    types[type].top = position.top + "px";
+    types[type].left = position.left + "px";
+  }
+ 
+  types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
+
   return (
     <div className={classes.Macaroons} style={types[type]}></div>
   );
 }
 
-export default Macaroons;
+export default React.memo(Macaroons);
