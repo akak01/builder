@@ -1,14 +1,15 @@
 import classes from "./Order.module.css";
 
-const Order = ({ name, phone, address, macaroons }) => {
-  const output = Object.keys(macaroons).map(label => <em key={label}>{label} - {macaroons[label]}</em>)
+const Order = ({ name, phone, address, macaroons, price }) => {
+  const outputIngredients = Object.keys(macaroons)
+    .map(macaroon => <em key={macaroon}>{macaroon} - {macaroons[macaroon]}</em>);
+
   return (
-    <ul className={classes.Order}>
-      <li>Name: {name}</li>
-      <li>Phone: {phone}</li>
-      <li>Address: {address}</li>
-      <li>Macaroons: {output}</li>
-    </ul>
+    <div className={classes.Order}>
+      <div>{name}, {phone}, {address}</div>
+      <div>{outputIngredients}</div>
+      <strong>{price}</strong>
+    </div>
   );
 }
 

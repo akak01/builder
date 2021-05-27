@@ -17,7 +17,7 @@ const Checkout = ({ history }) => {
   function submitCallback(event) {
     const data = new FormData(event.target);
 
-    axios.post('/orders.json?ayth=' + token, {
+    axios.post('/orders.json?auth=' + token, {
       name: data.get('name'),
       address: data.get('address'),
       phone: data.get('phone'),

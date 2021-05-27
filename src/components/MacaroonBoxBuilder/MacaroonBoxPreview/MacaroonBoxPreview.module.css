@@ -4,14 +4,14 @@
   flex-wrap: wrap;
   margin-bottom: 1rem;
   justify-content: center;
-  background-size: cover;
+ 
 }
 .macaroonBox {
   width: 400px;
   width: 400px;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 100%;
+  border-radius: 100%;
 
   display: flex;
   justify-content: center;
@@ -22,6 +22,8 @@
   height: 380px;
   border-radius: 100%;
   position: relative;
+  background-size: cover;
+  
 }
 .price {
   background-color: skyblue;

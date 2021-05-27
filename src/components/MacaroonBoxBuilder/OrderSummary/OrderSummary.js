@@ -2,12 +2,12 @@ import classes from "./OrderSummary.module.css";
 
 const OrderSummary = ({ macaroons, price }) => {
   const labels = {
-    blackMacaroon: "Black Macaroon",
-    blueMacaroon: "Blue Macaroon",
-    greenMacaroon: "Green Macaroon",
-    lemonMacaroon: "Lemon Macaroon",
-    mintMacaroon: "Mint Macaroon",
-    pinkMacaroon: "Pink Macaroon",
+    blackMacaroon: "Black macaroon",
+    blueMacaroon: "Blue macaroon",
+    greenMacaroon: "Green macaroon",
+    lemonMacaroon: "Lemon macaroon",
+    mintMacaroon: "Mint macaroon",
+    pinkMacaroon: "Pink macaroon",
     violetMacaroon: "Violet Macaroon",
   }
   const results = Object.keys(macaroons)

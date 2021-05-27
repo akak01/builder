@@ -1,16 +1,15 @@
 import Layout from "./components/Layout/Layout";
 import MacaroonBoxBuilder from "./components/MacaroonBoxBuilder/MacaroonBoxBuilder";
-import Checkout from "./components/Checkout/Checkout";
-import Orders from "./components/Orders/Orders";
 
 import "./App.css";
 import { Redirect, Route, Switch } from "react-router";
-import Auth from "./components/Auth/Auth";
-import Logout from "./components/Logout/Logout";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { restore } from "./store/actions/auth";
+import { useEffect } from "react";
+import Logout from "./components/Logout/Logout";
+import Auth from "./components/Auth/Auth";
+import Orders from "./components/Orders/Orders";
+import Checkout from "./components/Checkout/Checkout";
 
 const App = () => {
   const dispatch = useDispatch();

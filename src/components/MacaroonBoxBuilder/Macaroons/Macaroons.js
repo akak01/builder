@@ -44,9 +44,8 @@ const Macaroons = ({ type, fixed }) => {
     const position = getPosition(types[type].width);
     types[type].top = position.top + "px";
     types[type].left = position.left + "px";
+    types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
   }
- 
-  types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
 
   return (
     <div className={classes.Macaroons} style={types[type]}></div>
