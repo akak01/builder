@@ -16,7 +16,7 @@ const MacaroonBoxPreview = ({ macaroons, price }) => {
       <div className={classes.macaroonBox}>
         <div 
           className={classes.macaroons}
-          style={{ backroundImage: `url(${macaroonsBackground})`}}>
+          style={{ backgroundImage: `url(${macaroonsBackground})`}}>
           {result}
         </div>
       </div>

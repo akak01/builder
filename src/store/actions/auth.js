@@ -1,4 +1,3 @@
-  
 import axios from "axios"
 import { AUTH_SUCCESS, AUTH_FAIL, AUTH_START, AUTH_LOGOUT } from "./types";
 
@@ -32,7 +31,7 @@ export const restore = () => {
     const localId = localStorage.getItem('localId');
 
     if (idToken && localId) {
-      success(dispatch, { idToken, localId });
+      dispatch(success({ idToken, localId }));
     }
     else {
       dispatch(logout());
@@ -40,7 +39,7 @@ export const restore = () => {
   };
 };
 
-const key = "AIzaSyBmNRW4Dy30bYbbVl7kHd3d_HbPTh4o9R8";
+const key = "AIzaSyBSrYk2EFfEzE8Z1g-ZBkhlgkNY_-WAu6Y";
 export const auth = (method, email, password) => {
   const url = method === "signin"
     ? "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
