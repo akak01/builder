@@ -1,0 +1,39 @@
+.Auth{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.Auth form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; 
+}
+.Auth h1 {
+  color: skyblue;
+  font-size: 3rem;
+}
+.Auth input{
+  width: 18rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 2px solid skyblue;
+}
+
+.Auth button {
+    width: 8rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 2px solid skyblue;
+    background-color: skyblue;
+    
+}
+
+.Auth input::placeholder{
+  font-size: 1rem;
+  padding: 4px;
+  color: rgb(71, 73, 75);
+}
